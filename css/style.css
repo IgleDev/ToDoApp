@@ -1,0 +1,176 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(138, 135, 135);
+}
+
+.container{
+    margin: 120px auto;
+    max-width: 400px;
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.container #buttonFolderShow{
+    background-color: #ccc;
+    border-radius: 5%;
+    margin-bottom: 5%;
+}
+
+.container #buttonFolderShow:hover{
+    background-color: #555555;
+}
+
+.container .input{
+    display: flex;
+    height: 45px;
+    width: 100%;
+}
+
+.container .input input{
+    width: 85%;
+    height: 100%;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    border-radius: 3px;
+    padding-left: 15px;
+}
+
+.container .input button{
+    width: 65px;
+    height: 110%;
+    background-color: aqua;
+    color: black;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.container .input button:hover{
+   opacity: 0.8;
+}
+
+.container .input2{
+    display: none;
+    margin-top: 5%;
+    height: 45px;
+    width: 100%;
+}
+
+.container .input2 input{
+    width: 85%;
+    height: 100%;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    border-radius: 3px;
+    padding-left: 15px;
+}
+
+.container .input2 #buttonFolderAdd{
+    width: 65px;
+    height: 110%;
+    background-color: aqua;
+    color: black;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.container .input2 button:hover{
+   opacity: 0.8;
+}
+
+.folders{
+    margin-top: 5%;
+    width: 95%;
+}
+
+.folders input{
+    margin-left: 7%;
+}
+
+.folders label{
+    margin-left: 2%;
+}
+
+.tareas{
+    padding-left: 0%;
+}
+
+.tareas li{
+    list-style: none;
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.tareas li p{
+    margin: 0;
+    padding: 15px;
+    width: 90%;
+}
+
+.tareas .buttonDelete{
+    margin-left: 4%;
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 10px 10px;
+    outline: none;
+    border-radius: 5px;
+    width: 10%;
+}
+
+.tareas .buttonShow{
+    margin-left: 4%;
+    border: none;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    padding: 10px 10px;
+    outline: none;
+    border-radius: 5px;
+    width: 10%;
+}
+
+.subtareas{
+    margin-top: 5%;
+    padding-left: 0%;
+}
+
+.subtareas li{
+    list-style: none;
+    background-color: rgb(75, 75, 75);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.subtareas li p{
+    margin: 0;
+    padding: 15px;
+    width: 90%;
+}
+
+.subtareas .buttonDelete{
+    margin-left: 4%;
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 10px 10px;
+    outline: none;
+    border-radius: 5px;
+    width: 10%;
+}
+
+.pendientes{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: space-between;
+}
