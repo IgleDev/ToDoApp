@@ -81,15 +81,3 @@ function botonBorrarCarpetas(){
     })
     return btnDeleteSub;
 }
-
-selectElement.onchange = function() {
-    let carpeta = selectElement.value; 
-    
-    // Ocultar todos los textos
-    document.getElementById("ulcarpetas").style.display = "none";
-    
-    // Mostrar el texto correspondiente a la opción seleccionada
-    if (carpeta === carpeta.id) {
-      document.getElementById(carpeta).style.display = "block";
-    } 
-};
