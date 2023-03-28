@@ -15,7 +15,7 @@
         <div class="container">
             <form action="index.php" method="post">
                 <h1>Lista de Tareas</h1>
-                <button type="button" id="buttonFolderShow" onclick="mostrar()"><i class="fas fa-folder-plus"></i></button>
+                <button type="button" title="Añadir Carpeta" id="buttonFolderShow" onclick="mostrar()"><i class="fas fa-folder-plus"></i></button>
                 <div class="input">
                     <input type="text" name="" id="inputText" placeholder="Añadir Tarea">
                     <button type="button" id="buttonAdd">Añadir</button>
@@ -24,20 +24,20 @@
                     <input type="text" name="" id="inputTextFolder" placeholder="Añadir Carpeta">
                     <button type="button" id="buttonFolderAdd">Añadir</button>
                 </div>
-                <ul class="tareas" id="ultareas"></ul>
                 <div class="carpetas" id="addfolder">
-                    <h3>Carpetas:</h3>
                     <div class="folders">
+                        <h2>Selecciona la carpeta</h2>
                         <select name="" id="folders">
-                            <option value="Globales">Globales</option>
+                            <option value="globales">Globales</option>
                         </select>
                     </div>
                 </div>
                 <div id="opcion">
-                    <ul class="tareas" id="ulcarpetas"></ul>
+                    <h3 id="tituloCarpeta">Globales</h3>
+                    <div id="opc-tareas"></div>
                 </div>
             </form>
         </div>
-    <script src="index.js"></script>
+    <script src="to.js"></script>
 </body>
 </html>
