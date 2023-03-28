@@ -1,11 +1,11 @@
 let input = document.getElementById("inputText");
 let btnAdd = document.getElementById("buttonAdd");
-let uls = document.querySelector("#ultareas");
 let inputFolder = document.getElementById("inputTextFolder");
 let btnFolderAdd = document.getElementById("buttonFolderAdd");
-let ulsC = document.querySelector('#ulcarpetas');
+let adminTareas = document.getElementById('opc-tareas');
 let selectsOPC = document.getElementById('folders');
-let opcSelec = document.querySelector('#opc');
+let opcSelec = document.getElementById('folders').options;
+let titulo = document.getElementById('tituloCarpeta');
 
 // * Mostramos el input para añadir la carpeta
 function mostrar(){
@@ -26,29 +26,18 @@ btnAdd.addEventListener("click", (e) => {
             liStexto.textContent = tarea + ' - ' + carpeta;
             if(selectsOPC.value === carpeta){
                 lisS.appendChild(liStexto);
-                lisS.appendChild(botonBorrarCarpetas());
+                lisS.appendChild(botonBorrarListas());
+                let ulsC = document.createElement("ul")
                 ulsC.appendChild(lisS);
+                ulsC.id = 'listas-'+carpeta;
+                ulsC.dataset = carpeta;
+                ulsC.className = 'tareas'
+                adminTareas.appendChild(ulsC);
             }
         }
     }
     input.value = "";
 })
-
-// * Borramos las tareas
-function botonBorrarLista(){
-    // ! Creamos el boton para borrar 
-    let btnDelete = document.createElement("button") 
-    btnDelete.textContent = "X";
-    btnDelete.className = "buttonDelete";
-    btnDelete.type = "button";
-
-    // ! Hago un addEventListener para que reaccione al ser pulsado
-    btnDelete.addEventListener("click", (e) => {
-        let tareaborrar = e.target.parentElement;
-        uls.removeChild(tareaborrar);
-    })
-    return btnDelete;
-}
 
 // * Añadimos una carpeta a la lista + el radio
 btnFolderAdd.addEventListener("click", (e) => {
@@ -58,26 +47,40 @@ btnFolderAdd.addEventListener("click", (e) => {
        let opc = document.createElement('option');
        opcTexto = document.createTextNode(carpeta2);
        opc.appendChild(opcTexto);
-       opc.id = 'opc';
+       opc.id = 'lista-'+carpeta2;
        opc.value = carpeta2;
        selectsOPC.appendChild(opc);
-       
-       carpeta2.value = "";
     }
-    carpeta2.value = "";
+    inputFolder.value = "";
 })
 
-function botonBorrarCarpetas(){
+function botonBorrarListas(){
     // ! Creamos el boton para borrar 
     let btnDeleteSub = document.createElement("button") 
     btnDeleteSub.textContent = "X";
     btnDeleteSub.className = "buttonDelete";
     btnDeleteSub.type = "button";
 
-    // ! Hago un addEventListener para que reaccione al ser pulsado
     btnDeleteSub.addEventListener("click", (e) => {
-        let tareaborrar = e.target.parentElement;
-        ulsC.removeChild(tareaborrar);
+        let tareaBorrar = adminTareas.childNodes[0];
+        adminTareas.removeChild(tareaBorrar)
     })
     return btnDeleteSub;
 }
+
+selectsOPC.addEventListener("change", function() {
+    let tituloSelect = opcSelec[selectsOPC.selectedIndex].text;
+    titulo.textContent = tituloSelect;
+});
+
+selectsOPC.addEventListener('change', function(){
+    let opc = document.getElementById('listas-' + selectsOPC.value);
+    let listas = document.getElementsByTagName("ul");;
+    for(let i = 0; i < listas.length;i++){
+        if(listas[i] === opc){
+            listas[i].style.display = "block";
+        }else{
+            listas[i].style.display = "none";
+        }
+    }
+});
